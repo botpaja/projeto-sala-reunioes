@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Sala Lista</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>nome</th>
+          <th>data</th>
+          <th>horaFim</th>
+          <th>horaFim</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sala of salas | async">
+          <td>{{sala.nome}}</td>
+          <td>{{sala.data}}</td>
+          <td>{{sala.horaInicio}}</td>
+          <td>{{sala.horaFim}}</td>
+          <td><button (click)="apagaSala(sala.id)" class="btn btn-danger">Apagar</button>
+            <button (click)="atualizaSala(sala.id)" class="btn btn-info" style="margin-left: 10px">Atualizar</button>
+              <button (click)="salaDetalhes(sala.id)" class="btn btn-info" style="margin-left: 10px">Detalhes</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
